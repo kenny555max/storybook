@@ -1,0 +1,25 @@
+<h2>Edit Story</h2>
+<form action="/stories/edit/{{story._id}}" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <div class="input-field col s12">
+        <input placeholder="Enter Title......." value="{{story.title}}" name="title" id="title" type="text" class="validate" required>
+        <label for="first_name">Title</label>
+    </div>
+    <div class="input-field col s12">
+        <select required name="status">
+            {{#select story.status}}
+            <option value="Public">Public</option>
+            <option value="Private">Private</option>
+            {{/select}}
+        </select>
+        <label>Status</label>
+    </div>
+    <div class="input-field col s12">
+        <h4>Edit Your Story</h4>
+        <textarea id="editor" class="materialize-textarea" name="message">{{story.message}}</textarea>
+    </div>
+    <div class="input-field col s12">
+        <button class="btn-small waves-effect waves-light" type="submit">Edit</button>
+        <a href="/dashboard" class="waves-effect orange waves-light btn-small">Cancel</a>
+    </div>
+</form>

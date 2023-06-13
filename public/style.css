@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.card{
+    margin-top: 40px;
+}
+h1{
+    margin: 0;
+    margin-bottom: 40px;
+}
+.divider{
+    margin: 40px 0;
+}
+.app__login-btn a{
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.4);
+}
+.btn-floating{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+tr:nth-child(even){
+    background-color: rgba(211, 211, 211, 0.374);
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}

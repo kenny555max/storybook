@@ -1,0 +1,27 @@
+<p>This is your dashboard</p>
+<h3>Welcome {{ name }}</h3>
+<table class="people_list">
+    <tr>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Status</th>
+    </tr>
+    {{#each stories}}
+        <tr>
+            <td><a href="">{{title}}</a></td>
+            <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss a'}}</td>
+            <td>{{status}}</td>
+            <td style="display: flex;">
+                <a href="/stories/edit/{{_id}}" style='margin-right: 10px' class="btn-small mr-2"><i class="material-icons">edit</i></a>
+                <form action="/stories/delete/{{_id}}" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button class="btn-small waves-effect waves-light orange" type="submit">
+                        <i class="material-icons">delete</i>
+                    </button>
+                </form>
+            </td>
+        </tr>
+    {{else}}
+        <p>You have not created any stories</p>
+    {{/each}}
+</table>
